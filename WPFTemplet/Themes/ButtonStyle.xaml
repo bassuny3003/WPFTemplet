@@ -1,0 +1,601 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <!--#region This Is Buttons Main Styles And You Can add New Syles For Only Buttons Here-->
+
+    <!--#region  The Defualt Button Style From WPF-->
+
+    <Style x:Key="FocusVisual">
+
+        <Setter Property="Control.Template">
+
+            <Setter.Value>
+
+                <ControlTemplate>
+
+                    <Rectangle
+                        Margin="2"
+                        SnapsToDevicePixels="true"
+                        Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
+                        StrokeDashArray="1 2"
+                        StrokeThickness="1" />
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD" />
+    <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070" />
+
+    <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD" />
+    <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1" />
+
+    <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6" />
+    <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B" />
+
+    <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4" />
+    <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5" />
+    <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383" />
+
+    <Style x:Key="ButtonStyle.WPFDefualt" TargetType="{x:Type Button}">
+
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
+        <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+
+                <ControlTemplate TargetType="{x:Type Button}">
+
+                    <Border
+                        x:Name="border"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        SnapsToDevicePixels="true">
+
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Focusable="False"
+                            RecognizesAccessKey="True"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsDefaulted" Value="true">
+
+                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="true">
+
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.MouseOver.Background}" />
+
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
+
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="true">
+
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Pressed.Background}" />
+
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Border}" />
+
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+
+                            <Setter TargetName="border" Property="Background" Value="{StaticResource Button.Disabled.Background}" />
+
+                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Disabled.Border}" />
+
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="{StaticResource Button.Disabled.Foreground}" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <!--#endregion-->
+
+
+    <!--#region  01 - Modern Buttons Style-->
+
+    <!--#region Modern Button Style Base-->
+
+    <Style x:Key="ButtonStyle.Modern" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontFamily" Value="Helvetica" />
+        <Setter Property="FontWeight" Value="Light" />
+        <Setter Property="Background" Value="Transparent" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="btnBrdr"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="2"
+                        CornerRadius="5">
+
+                        <ContentPresenter
+                            x:Name="contentPresenter"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="Opacity" Value="0.4" />
+                            <Setter Property="Foreground" Value="DeepSkyBlue" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="false">
+
+                            <Setter TargetName="btnBrdr" Property="Background" Value="#FFF0F0F0" />
+                            <Setter TargetName="btnBrdr" Property="BorderBrush" Value="#686868" />
+                            <Setter TargetName="contentPresenter" Property="TextElement.Foreground" Value="Gray" />
+
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Without Border-->
+
+    <Style
+        x:Key="ButtonStyle.ModernWithoutBorder"
+        BasedOn="{StaticResource ButtonStyle.Modern}"
+        TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="5">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Opacity" Value="0.4" />
+                <Setter Property="Foreground" Value="DeepSkyBlue" />
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style With Left Corner Only-->
+
+    <Style
+        x:Key="ButtonStyl.ModerneWithRightCornerOnly"
+        BasedOn="{StaticResource ModernButtonStyle}"
+        TargetType="{x:Type Button}">
+
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="10 0 0 0">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Modern Button Style With Right Corner Only-->
+
+    <Style
+        x:Key="ButtonStyl.ModerneWithLeftCornerOnly"
+        BasedOn="{StaticResource ModernButtonStyle}"
+        TargetType="{x:Type Button}">
+
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="0 10 0 0">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Modern Button Style With Left Bottom Corner Only-->
+
+    <Style
+        x:Key="ButtonStyl.ModerneWithLeftBottomCornerOnly"
+        BasedOn="{StaticResource ModernButtonStyle}"
+        TargetType="{x:Type Button}">
+
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="0 0 10 0">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style With Right Bottom Corner Only-->
+
+    <Style
+        x:Key="ButtonStyl.ModerneWithRightBottomCornerOnly"
+        BasedOn="{StaticResource ModernButtonStyle}"
+        TargetType="{x:Type Button}">
+
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="0 0 0 10">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Close-->
+
+    <Style
+        x:Key="ButtonStyle.ModernClose"
+        BasedOn="{StaticResource ButtonStyle.ModernWithoutBorder}"
+        TargetType="{x:Type Button}">
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFFD5959" />
+                <Setter Property="Opacity" Value="1" />
+                <!--<Setter Property="Foreground" Value="DeepSkyBlue"/>-->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Maximiz-->
+
+    <Style
+        x:Key="ButtonStyle.ModernMaximiz"
+        BasedOn="{StaticResource ButtonStyle.ModernWithoutBorder}"
+        TargetType="{x:Type Button}">
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFB8D9D4" />
+                <Setter Property="Opacity" Value="1" />
+                <!--<Setter Property="Foreground" Value="DeepSkyBlue"/>-->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Minimiz-->
+
+    <Style
+        x:Key="ButtonStyle.ModernMinimiz"
+        BasedOn="{StaticResource ButtonStyle.ModernWithoutBorder}"
+        TargetType="{x:Type Button}">
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFE5FFFB" />
+                <Setter Property="Opacity" Value="1" />
+                <!--<Setter Property="Foreground" Value="DeepSkyBlue"/>-->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Information-->
+
+    <Style
+        x:Key="ButtonStyle.ModernInfo"
+        BasedOn="{StaticResource ButtonStyle.ModernWithoutBorder}"
+        TargetType="{x:Type Button}">
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FF3781BD" />
+                <Setter Property="Opacity" Value="1" />
+                <!--<Setter Property="Foreground" Value="DeepSkyBlue"/>-->
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Without Hover-->
+
+    <Style
+        x:Key="ButtonStyle.ModernWithoutHover"
+        BasedOn="{StaticResource ButtonStyle.Modern}"
+        TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="5">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.8" />
+                <Setter Property="Foreground" Value="DeepSkyBlue" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="White" />
+                <Setter Property="Foreground" Value="DeepSkyBlue" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Modern Button Style Free-->
+
+    <Style
+        x:Key="ButtonStyle.ModernFree"
+        BasedOn="{StaticResource ButtonStyle.Modern}"
+        TargetType="{x:Type Button}">
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="5">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Opacity" Value="0.8" />
+                <Setter Property="Foreground" Value="White" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="Pink" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
+    <!--#endregion-->
+
+    <!--#region  Modern Button Style ButtonMenu-->
+
+    <Style
+        x:Key="ButtonStyle.ModernButtonMenu"
+        BasedOn="{StaticResource ButtonStyle.Modern}"
+        TargetType="{x:Type Button}">
+
+        <Setter Property="Background" Value="Transparent" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="0">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region  Modern Button Style ButtonMenu With Bottom Left Corner 10-->
+
+    <Style
+        x:Key="ButtonStyle.ModernButtonMenuWithBottomLeftCorner"
+        BasedOn="{StaticResource ButtonStyle.Modern}"
+        TargetType="{x:Type Button}">
+
+        <Setter Property="Background" Value="Transparent" />
+
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        x:Name="brdr"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="White"
+                        BorderThickness="0"
+                        CornerRadius="0 0 0 10">
+
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=WindowState}" Value="Maximized">
+
+                            <Setter TargetName="brdr" Property="CornerRadius" Value="0" />
+
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+
+        <Style.Triggers>
+
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightSkyBlue" />
+            </Trigger>
+
+        </Style.Triggers>
+
+    </Style>
+
+    <!--#endregion-->
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>
