@@ -63,7 +63,11 @@
                 Click="btnExit_Click"
                 Style="{StaticResource ButtonStyle.ModernClose}">
 
-                <Image Width="20" Height="20" />
+                <Image
+                    Width="20"
+                    Height="20"
+                    Source="/Images/ControlButtons/Close.png"
+                    Stretch="None" />
 
             </Button>
 
