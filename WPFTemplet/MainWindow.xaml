@@ -53,7 +53,7 @@
                 FontSize="15"
                 FontWeight="DemiBold"
                 Foreground="White"
-                Text="Header Text" />
+                Text="Main Window Header " />
 
             <Button
                 x:Name="btnExit"
