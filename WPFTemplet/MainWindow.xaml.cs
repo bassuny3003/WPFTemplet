@@ -89,5 +89,65 @@ namespace WPFTemplet
                 WindowState = WindowState.Minimized;
             }
         }
+
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxOk messageBoxOk = new MessageBoxOk("Test OK" , "This is Ok Test .....",200,350, @"/Images/MessageBoxIcons/Information.png", @"/Images/MessageBoxIcons/Information.png");
+            messageBoxOk.Owner = this;
+            messageBoxOk.ShowDialog();
+        }
+
+        private void btnOkCancel_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxOkCancel messageBoxOkCancel = new MessageBoxOkCancel("Test OK & Cancel", "This is Ok & Cancel Test .....", 200, 500, @"/Images/MessageBoxIcons/Information.png", @"/Images/MessageBoxIcons/Information.png");
+            messageBoxOkCancel.Owner = this;
+            messageBoxOkCancel.ShowDialog();
+
+            if (messageBoxOkCancel.DialogResultRetern)
+            {
+                MessageBox.Show("True");
+            }
+            else
+            {
+                MessageBox.Show("False");
+            }
+        }
+
+        private void btnYesNo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxYesNo messageBoxYesNo = new MessageBoxYesNo("Test Yes& No", "This is Yes & No Test .....", 200, 500, @"/Images/MessageBoxIcons/Information.png", @"/Images/MessageBoxIcons/Information.png");
+            messageBoxYesNo.Owner = this;
+            messageBoxYesNo.ShowDialog();
+
+            if (messageBoxYesNo.DialogResultRetern)
+            {
+                MessageBox.Show("True");
+            }
+            else
+            {
+                MessageBox.Show("False");
+            }
+        }
+
+        private void btnYesNoCancel_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxYesNoCancel messageBoxYesNoCancel = new MessageBoxYesNoCancel("Test Yes& No", "This is Yes & No Test .....", 200, 500, @"/Images/MessageBoxIcons/Information.png", @"/Images/MessageBoxIcons/Information.png");
+            messageBoxYesNoCancel.Owner = this;
+            messageBoxYesNoCancel.ShowDialog();
+
+            if (messageBoxYesNoCancel.DialogResultRetern == "yes")
+            {
+                MessageBox.Show("Retern yes");
+            }
+            else if (messageBoxYesNoCancel.DialogResultRetern == "no")
+            {
+                MessageBox.Show("Retern no");
+
+            }
+            else
+            {
+                MessageBox.Show("Retern cancel");
+            }
+        }
     }
 }

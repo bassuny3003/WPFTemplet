@@ -69,7 +69,7 @@
                     Width="20"
                     Height="20"
                     Margin="3"
-                    Source="/Images/CotrolButtons/Close.png"
+                    Source="/Images/ControlButtons/Close.png"
                     Stretch="None" />
 
             </Button>
@@ -88,7 +88,7 @@
                     Width="20"
                     Height="20"
                     Margin="3"
-                    Source="/Images/CotrolButtons/Maximize.png"
+                    Source="/Images/ControlButtons/Maximize.png"
                     Stretch="Fill" />
 
             </Button>
@@ -107,16 +107,64 @@
                     Width="20"
                     Height="20"
                     Margin="3"
-                    Source="/Images/CotrolButtons/Minimize.png"
+                    Source="/Images/ControlButtons/Minimize.png"
                     Stretch="Fill" />
 
             </Button>
 
         </Grid>
 
-        <Grid Grid.Row="1" />
+        <Grid Grid.Row="1">
+            <Button
+                x:Name="btnOK"
+                Width="135"
+                Height="75"
+                Margin="10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnOK_Click"
+                Content="MessageBoxOk"
+                Foreground="Black"
+                Style="{StaticResource ButtonStyle.Modern}" />
 
-        <Grid Grid.Row="2"/>
+            <Button
+                x:Name="btnOkCancel"
+                Width="135"
+                Height="75"
+                Margin="150,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnOkCancel_Click"
+                Content="MessageBoxOkCancel"
+                Foreground="Black"
+                Style="{StaticResource ButtonStyle.Modern}" />
+
+            <Button
+                x:Name="btnYesNo"
+                Width="135"
+                Height="75"
+                Margin="290,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnYesNo_Click"
+                Content="MessageBoxYesNo"
+                Foreground="Black"
+                Style="{StaticResource ButtonStyle.Modern}" />
+
+            <Button
+                x:Name="btnYesNoCancel"
+                Width="145"
+                Height="75"
+                Margin="430,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Click="btnYesNoCancel_Click"
+                Content="MessageBoxYesNoCancel"
+                Foreground="Black"
+                Style="{StaticResource ButtonStyle.Modern}" />
+        </Grid>
+
+        <Grid Grid.Row="2" />
 
     </Grid>
 </Window>

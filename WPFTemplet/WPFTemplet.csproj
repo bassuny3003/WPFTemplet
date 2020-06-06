@@ -202,13 +202,13 @@
     <Resource Include="Images\MessageBoxIcons\Stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\CotrolButtons\Close.png" />
+    <Resource Include="Images\ControlButtons\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\CotrolButtons\Maximize.png" />
+    <Resource Include="Images\ControlButtons\Maximize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\CotrolButtons\Minimize.png" />
+    <Resource Include="Images\ControlButtons\Minimize.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
