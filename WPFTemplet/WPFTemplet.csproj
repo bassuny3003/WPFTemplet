@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,8 +56,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\CheckDevice.cs" />
+    <Compile Include="Class\CheckInternetConnection.cs" />
+    <Compile Include="Class\DataBaseConnection.cs" />
+    <Compile Include="Class\GlobalVariables.cs" />
     <Compile Include="WindowUI\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUI\AppLog\ChangelogWindow.xaml.cs">
+      <DependentUpon>ChangelogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUI\EULA\AgreementAcceptedWindow.xaml.cs">
+      <DependentUpon>AgreementAcceptedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUI\EULA\UserAgreementWindow.xaml.cs">
+      <DependentUpon>UserAgreementWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowUI\ModernMessageBox\MessageBoxOk.xaml.cs">
       <DependentUpon>MessageBoxOk.xaml</DependentUpon>
@@ -69,6 +83,9 @@
     </Compile>
     <Compile Include="WindowUI\ModernMessageBox\MessageBoxYesNoCancel.xaml.cs">
       <DependentUpon>MessageBoxYesNoCancel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowUI\UpdateCheck\CheckUpdateWindow.xaml.cs">
+      <DependentUpon>CheckUpdateWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -142,6 +159,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WindowUI\AppLog\ChangelogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowUI\EULA\AgreementAcceptedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowUI\EULA\UserAgreementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowUI\ModernMessageBox\MessageBoxOk.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowUI\ModernMessageBox\MessageBoxYesNoCancel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowUI\UpdateCheck\CheckUpdateWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,30 +218,35 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Resource Include="Resources\Images\MessageBoxIcons\Error.png" />
+    <Resource Include="Resources\Images\MessageBoxIcons\Warning.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MessageBoxIcons\Error.png" />
-    <Resource Include="Images\MessageBoxIcons\Warning.png" />
+    <Resource Include="Resources\Images\MessageBoxIcons\Information.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MessageBoxIcons\Information.png" />
+    <Resource Include="Resources\Images\MessageBoxIcons\Question.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MessageBoxIcons\Question.png" />
+    <Resource Include="Resources\Images\MessageBoxIcons\Stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\MessageBoxIcons\Stop.png" />
+    <Resource Include="Resources\Images\ControlButtons\Close.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ControlButtons\Close.png" />
+    <Resource Include="Resources\Images\ControlButtons\Maximize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ControlButtons\Maximize.png" />
+    <Resource Include="Resources\Images\ControlButtons\Minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\ControlButtons\Minimize.png" />
+    <Resource Include="Resources\ChangeLog\ChangeLog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\EULAAgrement\EULAArabic.txt" />
+    <Resource Include="Resources\EULAAgrement\EULAEnglish.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
