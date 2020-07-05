@@ -67,7 +67,7 @@
                     Width="20"
                     Height="20"
                     Source="/Images/ControlButtons/Close.png"
-                    Stretch="None" />
+                    Stretch="Fill" />
 
             </Button>
 
