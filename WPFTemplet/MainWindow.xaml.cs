@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFTemplet.WindowUI;
-using WPFTemplet.WindowUI.ModernMessageBox;
+using WPFTemplet.WindowUI.ModernMessageBox; //Adding Windows Folder Path To The Project
+using WPFTemplet.WindowUI.EULA;
+using WPFTemplet.Class;
 
 namespace WPFTemplet
 {
