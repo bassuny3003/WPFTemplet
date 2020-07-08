@@ -47,7 +47,7 @@
                 Margin="8"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Source="/Images/MessageBoxIcons/Information.png"
+                Source="/Resources/Images/MessageBoxIcons/Error.png"
                 Stretch="Fill">
 
                 <Image.ContextMenu>
@@ -92,8 +92,10 @@
                 Style="{StaticResource ButtonStyle.ModernClose}">
 
                 <Image
-                    Margin="5"
-                    Source="/Images/ControlButtons/CLose.png"
+                    Width="20"
+                    Height="20"
+                    Margin="3"
+                    Source="/Resources/Images/ControlButtons/Close.png"
                     Stretch="Fill" />
 
             </Button>
@@ -117,7 +119,7 @@
                 Margin="10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                Source="/Images/MessageBoxIcons/Information.png" />
+                Source="/Resources/Images/MessageBoxIcons/Error.png" />
 
             <TextBlock
                 Grid.Row="0"

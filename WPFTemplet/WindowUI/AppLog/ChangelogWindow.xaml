@@ -70,8 +70,9 @@
                 Padding="2"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Center"
+                FontWeight="Bold"
                 Foreground="White"
-                Text="Change Log ..." FontWeight="Bold"/>
+                Text="Change Log ..." />
 
             <Button
                 x:Name="btnExit"

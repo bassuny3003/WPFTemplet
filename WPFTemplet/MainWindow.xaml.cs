@@ -30,6 +30,7 @@ namespace WPFTemplet
 
             MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
             MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -66,7 +67,9 @@ namespace WPFTemplet
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            //this.Close();
+
+            Application.Current.Shutdown();
         }
 
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
