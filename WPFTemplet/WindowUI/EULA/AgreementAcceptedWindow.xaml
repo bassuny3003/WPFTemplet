@@ -69,6 +69,7 @@
                 Margin="0,0,10,0"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
+                Click="btnExit_Click"
                 Style="{StaticResource ButtonStyle.ModernClose}">
 
                 <Image
