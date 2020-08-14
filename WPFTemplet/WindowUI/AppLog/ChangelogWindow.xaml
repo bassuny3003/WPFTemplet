@@ -155,10 +155,11 @@
             <TextBox
                 x:Name="txtBxChangeLog"
                 Margin="10"
-                Padding="0,0,0,10"
+                Padding="15,0,15,0"
                 HorizontalContentAlignment="Left"
                 VerticalContentAlignment="Top"
                 FontSize="15"
+                Foreground="Black"
                 IsReadOnly="True"
                 Style="{StaticResource txtboxStyle}"
                 VerticalScrollBarVisibility="Auto" />

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,24 +21,55 @@ namespace WPFTemplet.WindowUI.AppLog
     /// </summary>
     public partial class ChangelogWindow : Window
     {
+
         public ChangelogWindow()
         {
             InitializeComponent();
+
+            txtBxChangeLog.Text = Properties.Resources.ChangeLog;
+
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                if (WindowState == WindowState.Maximized)
+                {
+                    return;
+                }
+                else
+                {
+                    brdrChanglogWindow.Opacity = 0.7;
 
+                    if (this.Cursor != Cursors.Wait)
+                    {
+                        Mouse.OverrideCursor = Cursors.SizeAll;
+                    }
+
+                    DragMove();
+                }
+            }
+
+            if (e.LeftButton == MouseButtonState.Released)
+            {
+                brdrChanglogWindow.Opacity = 1;
+
+                if (this.Cursor != Cursors.Wait)
+                {
+                    Mouse.OverrideCursor = Cursors.Arrow;
+                }
+            }
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
