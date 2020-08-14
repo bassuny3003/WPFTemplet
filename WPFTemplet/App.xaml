@@ -37,6 +37,8 @@
 
                 <ResourceDictionary Source="Themes/ResizeGrip.xaml" />
 
+                <ResourceDictionary Source="Themes/ToggleButtonStyle.xaml" />
+
 
             </ResourceDictionary.MergedDictionaries>
 
