@@ -16,6 +16,7 @@ using WPFTemplet.WindowUI;
 using WPFTemplet.WindowUI.ModernMessageBox; //Adding Windows Folder Path To The Project
 using WPFTemplet.WindowUI.EULA;
 using WPFTemplet.Class;
+using WPFTemplet.WindowUI.AppLog;
 
 namespace WPFTemplet
 {
@@ -153,6 +154,13 @@ namespace WPFTemplet
             {
                 MessageBox.Show("Retern cancel");
             }
+        }
+
+        private void OpenNewTest_Click(object sender, RoutedEventArgs e)
+        {
+            UserAgreementWindow userAgreementWindow = new UserAgreementWindow();
+            userAgreementWindow.Owner = this;
+            userAgreementWindow.ShowDialog();
         }
     }
 }

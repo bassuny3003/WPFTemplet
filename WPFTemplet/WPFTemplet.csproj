@@ -56,7 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Class\CheckDevice.cs" />
+    <Compile Include="Class\CheckHardDiskSerial.cs" />
+    <Compile Include="Class\CheckMotherBoardSerial.cs" />
     <Compile Include="Class\CheckInternetConnection.cs" />
     <Compile Include="Class\DataBaseConnection.cs" />
     <Compile Include="Class\GlobalVariables.cs" />
@@ -142,6 +143,10 @@
     <Page Include="Themes\TextBoxStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ToggleButtonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\TooltipStyle.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -242,7 +247,7 @@
     <Resource Include="Resources\Images\ControlButtons\Minimize.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ChangeLog\ChangeLog.txt" />
+    <EmbeddedResource Include="Resources\ChangeLog\ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\EULAAgrement\EULAArabic.txt" />

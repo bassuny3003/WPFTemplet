@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WPFTemplet.Properties
-{
-
-
+namespace WPFTemplet.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,102 @@ namespace WPFTemplet.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WPFTemplet.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keys for Changelog:
+        ///
+        ///+	/ Feature Added / Improved
+        ///*	/ Feature Added By sugtions
+        ///-	/ Feature Removed / Deleted
+        ///?	/ Feature has been debged and tested
+        ///!	/ Sum bug fixed
+        ///
+        ///===============================================================
+        ///-----------------------------------------------------------------------------------------------------------------
+        /// V 1.0.6.0	[ 12/06/2019 ]		( Private Update )
+        ///------------------------------------------------------------------------------------------------------------- [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ChangeLog {
+            get {
+                return ResourceManager.GetString("ChangeLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to * Torrent Share  اتفاقية المستخدم النهائي
+        ///
+        ///Torrent Share هو برنامج صغير صنع بكل الحب لمساعدة الجميع لإيجاد ملفات التورنت مع واجه علي نظام تشغيل ويندوز ليكون سهل علي المستخدم استخدامه، لاستخدام هذا البرنامج لابد من الموافق علي كل الشروط الأسفل:
+        ///
+        ///أنا أعلم وأفهم أن:
+        ///
+        ///1. هذا البرنامج مجاني ويستطيع أي حد نشرة مجانا (البرنامج نفسه).
+        ///
+        ///2. هذا البرنامج يمكن في أي وقت من الأوقات التوقف للصيانة بدون إعلامي.
+        ///
+        ///3. ملفات التورنت التي سوف أقوم بمشاركتها انا صانعها ومالكها، وإذا قمت بجلب ملفات خارجية لنشرها في الب [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string EULAArabic {
+            get {
+                return ResourceManager.GetString("EULAArabic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Torrent Share – End User License Agreement (EULA)
+        ///
+        ///Torrent Share is a small Program made with Love to help everyone to find torrent files with windows graphical interface to be easy to use, to use this program you must AGREE all terms down:
+        ///
+        ///I know and understand that:
+        ///
+        ///1. This program is FREEWARE and anyone can share it free (the program itself). 
+        ///
+        ///2. The program can in anytime stop for maintenance without informing me.
+        ///
+        ///3. The torrent files I will share I am the maker and the owner for it and if [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string EULAEnglish {
+            get {
+                return ResourceManager.GetString("EULAEnglish", resourceCulture);
             }
         }
     }
